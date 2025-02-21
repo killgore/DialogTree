@@ -1,0 +1,1226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quake 3 BSP Map Viewer In Direct3D</title>
+<meta name="robots" content="index,follow">
+<link rel="pingback" href="http://dialogtree.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Dialog Tree » Feed" href="http://dialogtree.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Dialog Tree » Comments Feed" href="http://dialogtree.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Dialog Tree » Quake 3 BSP Map Viewer In Direct3D Comments Feed" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/feed/">
+<link rel="stylesheet" id="wp-syntax-css-css" href="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="thematic_style-css" href="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/style.css" type="text/css" media="all">
+<script type="text/javascript" async="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/ga.js"></script><script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/comment-reply.js"></script>
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/jquery.js"></script>
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/external-tracking.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://dialogtree.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://dialogtree.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Adding a UINavigationController Programmatically within XCode 4" href="http://dialogtree.com/2011/05/adding-a-uinavigationcontroller-programmatically-within-xcode-4/">
+<link rel="next" title="Creating a Custom UITableView in Your iOS App" href="http://dialogtree.com/2011/05/creating-a-custom-uitableview-in-your-ios-app/">
+
+<link rel="canonical" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/">
+<link rel="shortlink" href="http://dialogtree.com/?p=709">
+<!-- Google Analytics Tracking by Google Analyticator 6.4.4.3: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+	var analyticsFileTypes = [''];
+	var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-20896075-1']);
+        _gaq.push(['_addDevId', 'i9k95']); // Google Analyticator App ID with Google 
+        
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<script charset="utf-8" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/button.js"></script></head>
+
+<body class="single single-post postid-709 single-format-standard windows firefox ff74">
+
+	<div id="wrapper" class="hfeed">
+
+		<div id="header">
+
+        		<div id="branding">
+    
+    	<div id="blog-title"><span><a href="http://dialogtree.com/" title="Dialog Tree" rel="home">Dialog Tree</a></span></div>
+    
+    	<div id="blog-description">Independent Game Development Discussion</div>
+
+		</div><!--  #branding -->
+    
+    <div id="access">
+    
+    	<div class="skip-link"><a href="#content" title="Skip navigation to the content">Skip to content</a></div><!-- .skip-link -->
+    	
+    	<div class="menu"></div>
+    	
+    </div><!-- #access -->
+           		
+    	</div><!-- #header-->		        
+    	    	
+	<div id="main">
+
+		<div id="container">
+			
+			<div id="content">
+
+				<div id="nav-above" class="navigation">
+				
+					<div class="nav-previous"><a href="http://dialogtree.com/2011/05/adding-a-uinavigationcontroller-programmatically-within-xcode-4/" rel="prev"><span class="meta-nav">«</span> Adding a UINavigationController Programmatically within XCode 4</a></div>
+					
+					<div class="nav-next"><a href="http://dialogtree.com/2011/05/creating-a-custom-uitableview-in-your-ios-app/" rel="next">Creating a Custom UITableView in Your iOS App <span class="meta-nav">»</span></a></div>
+					
+				</div>
+					
+				<div id="post-709" class="post-709 post type-post status-publish format-standard hentry category-c category-direct3d category-resource tag-axon tag-bsp-tree tag-quake-3 tag-tutorial"> 
+
+				
+
+					<h1 class="entry-title">Quake 3 BSP Map Viewer In Direct3D</h1>
+
+					<div class="entry-meta">
+
+	<span class="meta-prep meta-prep-author">By </span><span class="author vcard"><a class="url fn n" href="http://dialogtree.com/author/axon/" title="View all posts by axon">axon</a></span>
+
+	<span class="meta-sep meta-sep-entry-date"> | </span>
+
+	<span class="meta-prep meta-prep-entry-date">Published: </span><span class="entry-date"><abbr class="published" title="2011-05-11T22:09:56-0400">2011/05/11</abbr></span>
+
+	
+
+</div><!-- .entry-meta -->
+     				
+					<div class="entry-content">
+					
+						<p><a href="http://dialogtree.com/wp-content/uploads/2011/05/images.jpg"><img class="aligncenter size-full wp-image-719" title="images" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/images.jpg" alt="" width="92" height="89"></a></p>
+<p>The title describes what I have been working on for the past 2 weeks.  I have recently been in early discussions with <a href="http://irrationalgames.com/">Irrational Games</a>
+ about a potential programming position.  After sending in my resume, 
+their recruiter contacted me and asked for a code sample.  My first 
+submission was a bit too simple, so they requested something with some 
+more substance.  This time they offered options for potential projects. 
+ One caught my eye: “build a spatial representation (e.g. octree, kd 
+tree, bsp tree), place some entities in it, and then perform some ray 
+casts against those entities.”   I have always wanted to do a project 
+with a <a href="http://en.wikipedia.org/wiki/Binary_space_partitioning">Binary Spatial Partition Tree (BSP Tree)</a>, so I chose to implement that option.</p>
+<p><span id="more-709"></span></p>
+<p>Now that I decided to implement a BSP tree and do ray selection 
+within it I needed some data to build the tree with.  I didn’t want to 
+spend a lot of time building up my own spatial data, so I decided to use
+ Quake 3 maps as my data source.  Not only would this provide a 
+convenient data source, it would also look better than what I could 
+produce myself.</p>
+<p>With data source selected I began to learn about the format of the 
+Quake 3 BSP files.  This was key to getting anything started.  I was 
+happy to find that I was not the first person to tread this ground.  I 
+found these sites to be quite helpful for deciphering the Quake 3 bsp 
+file format.</p>
+<p><a href="http://www.misofruit.co.kr/seojewoo/programming/opengl/Quake3Format.htm">Unofficial Quake 3 BSP Format</a><br>
+<a href="http://www.mralligator.com/q3/">Unofficial Quake 3 Map Specs</a><br>
+<a href="http://graphics.cs.brown.edu/games/quake/quake3.html">Rendering Quake 3 Maps</a></p>
+<p><strong>Loading The Quake 3 Data</strong></p>
+<p>Ensuring the data was properly loaded into memory was fairly time 
+consuming.  The Quake 3 bsp file contains the following sections within 
+it.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	<span style="color: #0000ff;">enum</span> eLumps
+	<span style="color: #008000;">{</span>
+		Entities <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span>,     <span style="color: #666666;">// Stores player/object positions, etc...</span>
+		Textures,         <span style="color: #666666;">// Stores texture information</span>
+		Planes,           <span style="color: #666666;">// Stores the splitting planes</span>
+		Nodes,            <span style="color: #666666;">// Stores the BSP nodes</span>
+		Leaves,            <span style="color: #666666;">// Stores the leafs of the nodes</span>
+		LeafFaces,        <span style="color: #666666;">// Stores the leaf's indices into the faces</span>
+		LeafBrushes,      <span style="color: #666666;">// Stores the leaf's indices into the brushes</span>
+		Models,           <span style="color: #666666;">// Stores the info of world models</span>
+		Brushes,          <span style="color: #666666;">// Stores the brushes info (for collision)</span>
+		BrushSides,       <span style="color: #666666;">// Stores the brush surfaces info</span>
+		Vertices,         <span style="color: #666666;">// Stores the level vertices</span>
+		MeshVerts,        <span style="color: #666666;">// Stores the model vertices offsets</span>
+		Shaders,          <span style="color: #666666;">// Stores the shader files (blending, anims..)</span>
+		Faces,            <span style="color: #666666;">// Stores the faces for the level</span>
+		LightMaps,        <span style="color: #666666;">// Stores the lightmaps for the level</span>
+		LightVolumes,     <span style="color: #666666;">// Stores extra world lighting information</span>
+		VisData,          <span style="color: #666666;">// Stores PVS and cluster info (visibility)</span>
+		MaxLumps          <span style="color: #666666;">// A constant to store the number of lumps</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span></pre></td></tr></tbody></table></div>
+
+<p>The file begins with a header and a lump directory.  A lump directory
+ defines the offset in the file of each above section and the length of 
+that section.</p>
+<p>Now that the layout of the file is known, each section must be loaded
+ into memory.  This requires a second bit of information, the data 
+structure layout for each section.  These are available at the above 
+websites.  Here are my versions.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	<span style="color: #0000ff;">struct</span> BSPLump
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> offset<span style="color: #008080;">;</span> <span style="color: #666666;">//location in file</span>
+		<span style="color: #0000ff;">int</span> length<span style="color: #008080;">;</span> <span style="color: #666666;">//length of lump</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPHeader
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">char</span> strID<span style="color: #008000;">[</span><span style="color: #0000dd;">4</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// This should always be 'IBSP'</span>
+		<span style="color: #0000ff;">int</span> version<span style="color: #008080;">;</span>       <span style="color: #666666;">// This should be 0x2e for Quake 3 files</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span> 
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPVertex
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">float</span> vPosition<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>      <span style="color: #666666;">// (x, y, z) position.</span>
+		<span style="color: #0000ff;">float</span> vTextureCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>  <span style="color: #666666;">// (u, v) texture coordinate</span>
+		<span style="color: #0000ff;">float</span> vLightmapCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// (u, v) lightmap coordinate</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>        <span style="color: #666666;">// (x, y, z) normal vector</span>
+		UBYTE color<span style="color: #008000;">[</span><span style="color: #0000dd;">4</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// RGBA color for the vertex</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPD3DVertex
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">float</span> vPosition<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>      <span style="color: #666666;">// (x, y, z) position.</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>        <span style="color: #666666;">// (x, y, z) normal vector</span>
+		UBYTE color<span style="color: #008000;">[</span><span style="color: #0000dd;">4</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// RGBA color for the vertex</span>
+		<span style="color: #0000ff;">float</span> vTextureCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>  <span style="color: #666666;">// (u, v) texture coordinate</span>
+		<span style="color: #0000ff;">float</span> vLightmapCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// (u, v) lightmap coordinate</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPFace
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> textureID<span style="color: #008080;">;</span>        <span style="color: #666666;">// The index into the texture array</span>
+		<span style="color: #0000ff;">int</span> effect<span style="color: #008080;">;</span>           <span style="color: #666666;">// The index for the effects (or -1 = n/a)</span>
+		<span style="color: #0000ff;">int</span> type<span style="color: #008080;">;</span>             <span style="color: #666666;">// 1=polygon, 2=patch, 3=mesh, 4=billboard</span>
+		<span style="color: #0000ff;">int</span> vertexIndex<span style="color: #008080;">;</span>      <span style="color: #666666;">// The index into this face's first vertex</span>
+		<span style="color: #0000ff;">int</span> numOfVerts<span style="color: #008080;">;</span>       <span style="color: #666666;">// The number of vertices for this face</span>
+		<span style="color: #0000ff;">int</span> meshVertIndex<span style="color: #008080;">;</span>    <span style="color: #666666;">// The index into the first meshvertex</span>
+		<span style="color: #0000ff;">int</span> numMeshVerts<span style="color: #008080;">;</span>     <span style="color: #666666;">// The number of mesh vertices</span>
+		<span style="color: #0000ff;">int</span> lightmapID<span style="color: #008080;">;</span>       <span style="color: #666666;">// The texture index for the lightmap</span>
+		<span style="color: #0000ff;">int</span> lMapCorner<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>    <span style="color: #666666;">// The face's lightmap corner in the image</span>
+		<span style="color: #0000ff;">int</span> lMapSize<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>      <span style="color: #666666;">// The size of the lightmap section</span>
+		<span style="color: #0000ff;">float</span> lMapPos<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// The 3D origin of lightmap.</span>
+		<span style="color: #0000ff;">float</span> lMapBitsets<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// The 3D space for s and t unit vectors.</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// The face normal.</span>
+		<span style="color: #0000ff;">int</span> size<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>          <span style="color: #666666;">// The bezier patch dimensions.</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPTexture
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">char</span> strName<span style="color: #008000;">[</span><span style="color: #0000dd;">64</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>   <span style="color: #666666;">// The name of the texture w/o the extension</span>
+		<span style="color: #0000ff;">int</span> flags<span style="color: #008080;">;</span>          <span style="color: #666666;">// The surface flags (unknown)</span>
+		<span style="color: #0000ff;">int</span> contents<span style="color: #008080;">;</span>       <span style="color: #666666;">// The content flags (unknown)</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPLightMap
+	<span style="color: #008000;">{</span>
+		UBYTE imageBits<span style="color: #008000;">[</span><span style="color: #0000dd;">128</span><span style="color: #008000;">]</span><span style="color: #008000;">[</span><span style="color: #0000dd;">128</span><span style="color: #008000;">]</span><span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>   <span style="color: #666666;">// The RGB data in a 128x128 image</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPNode
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> plane<span style="color: #008080;">;</span>      <span style="color: #666666;">// The index into the planes array</span>
+		<span style="color: #0000ff;">int</span> front<span style="color: #008080;">;</span>      <span style="color: #666666;">// The child index for the front node</span>
+		<span style="color: #0000ff;">int</span> back<span style="color: #008080;">;</span>       <span style="color: #666666;">// The child index for the back node</span>
+		<span style="color: #0000ff;">int</span> mins<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>    <span style="color: #666666;">// The bounding box min position.</span>
+		<span style="color: #0000ff;">int</span> maxs<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>    <span style="color: #666666;">// The bounding box max position.</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPLeaf
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> cluster<span style="color: #008080;">;</span>           <span style="color: #666666;">// The visibility cluster</span>
+		<span style="color: #0000ff;">int</span> area<span style="color: #008080;">;</span>              <span style="color: #666666;">// The area portal</span>
+		<span style="color: #0000ff;">int</span> mins<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// The bounding box min position</span>
+		<span style="color: #0000ff;">int</span> maxs<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// The bounding box max position</span>
+		<span style="color: #0000ff;">int</span> leafFirstFace<span style="color: #008080;">;</span>     <span style="color: #666666;">// The first index into the face array</span>
+		<span style="color: #0000ff;">int</span> leafFaceCount<span style="color: #008080;">;</span>    <span style="color: #666666;">// The number of faces for this leaf</span>
+		<span style="color: #0000ff;">int</span> leafBrush<span style="color: #008080;">;</span>         <span style="color: #666666;">// The first index for into the brushes</span>
+		<span style="color: #0000ff;">int</span> numOfLeafBrushes<span style="color: #008080;">;</span>  <span style="color: #666666;">// The number of brushes for this leaf</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span> 
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPPlane
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// Plane normal.</span>
+		<span style="color: #0000ff;">float</span> d<span style="color: #008080;">;</span>              <span style="color: #666666;">// The plane distance from origin</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPVisData
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> numOfClusters<span style="color: #008080;">;</span>   <span style="color: #666666;">// The number of clusters</span>
+		<span style="color: #0000ff;">int</span> bytesPerCluster<span style="color: #008080;">;</span> <span style="color: #666666;">// Bytes (8 bits) in the cluster's bitset</span>
+		UBYTE <span style="color: #000040;">*</span>pBitsets<span style="color: #008080;">;</span>      <span style="color: #666666;">// Array of bytes holding the cluster vis.</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPBrush
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> brushSide<span style="color: #008080;">;</span>           <span style="color: #666666;">// The starting brush side for the brush</span>
+		<span style="color: #0000ff;">int</span> numOfBrushSides<span style="color: #008080;">;</span>     <span style="color: #666666;">// Number of brush sides for the brush</span>
+		<span style="color: #0000ff;">int</span> textureID<span style="color: #008080;">;</span>           <span style="color: #666666;">// The texture index for the brush</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPBrushSide
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> plane<span style="color: #008080;">;</span>              <span style="color: #666666;">// The plane index</span>
+		<span style="color: #0000ff;">int</span> textureID<span style="color: #008080;">;</span>          <span style="color: #666666;">// The texture index</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPModel
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">float</span> min<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// The min position for the bounding box</span>
+		<span style="color: #0000ff;">float</span> max<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// The max position for the bounding box.</span>
+		<span style="color: #0000ff;">int</span> faceIndex<span style="color: #008080;">;</span>          <span style="color: #666666;">// The first face index in the model</span>
+		<span style="color: #0000ff;">int</span> numOfFaces<span style="color: #008080;">;</span>         <span style="color: #666666;">// The number of faces in the model</span>
+		<span style="color: #0000ff;">int</span> brushIndex<span style="color: #008080;">;</span>         <span style="color: #666666;">// The first brush index in the model</span>
+		<span style="color: #0000ff;">int</span> numOfBrushes<span style="color: #008080;">;</span>       <span style="color: #666666;">// The number brushes for the model</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPShader
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">char</span> strName<span style="color: #008000;">[</span><span style="color: #0000dd;">64</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// The name of the shader file</span>
+		<span style="color: #0000ff;">int</span> brushIndex<span style="color: #008080;">;</span>       <span style="color: #666666;">// The brush index for this shader</span>
+		<span style="color: #0000ff;">int</span> unknown<span style="color: #008080;">;</span>          <span style="color: #666666;">// This is 99% of the time 5</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">struct</span> BSPLight
+	<span style="color: #008000;">{</span>
+		UBYTE ambient<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// This is the ambient color in RGB</span>
+		UBYTE directional<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// This is the directional color in RGB</span>
+		UBYTE direction<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>   <span style="color: #666666;">// The direction of the light: [phi,theta]</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span></pre></td></tr></tbody></table></div>
+
+<p>Knowing the data structure layouts I can now create conainers for the data.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	BSPHeader _header<span style="color: #008080;">;</span>
+	BSPLump _lumpDir<span style="color: #008000;">[</span>MaxLumps<span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">//lump directory, each lumps location and size</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">string</span> _entities<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _textures<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _planes<span style="color: #008080;">;</span> <span style="color: #666666;">//BSP planes to check if in front or back of node space</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _nodes<span style="color: #008080;">;</span> <span style="color: #666666;">//BSP nodes</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _leaves<span style="color: #008080;">;</span>
+	<span style="color: #0000ff;">int</span> <span style="color: #000040;">*</span>pLeafFaces<span style="color: #008080;">;</span>           <span style="color: #666666;">// The index into the face array</span>
+	<span style="color: #0000ff;">int</span> <span style="color: #000040;">*</span>pLeafBrushes<span style="color: #008080;">;</span>         <span style="color: #666666;">// The index into the brush array</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _models<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _brushes<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _brushSides<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _vertices<span style="color: #008080;">;</span>
+	<span style="color: #0000ff;">int</span> <span style="color: #000040;">*</span>pMeshVerts<span style="color: #008080;">;</span>           <span style="color: #666666;">// The offsets for index buffer for a complete mesh</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _shaders<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _faces<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _lightMaps<span style="color: #008080;">;</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _lights<span style="color: #008080;">;</span>
+	BSPVisData _visData<span style="color: #008080;">;</span> <span style="color: #666666;">//visibility data between clusters</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _visibleLeaves<span style="color: #008080;">;</span> <span style="color: #666666;">//bsp leaves in view</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">set</span> _alreadyVisibleFaces<span style="color: #008080;">;</span> <span style="color: #666666;">//keep track so we dont double up on faces to render or check</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _visibleFaces<span style="color: #008080;">;</span> <span style="color: #666666;">//faces to render or ray check</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> _faceIndexBuffers<span style="color: #008080;">;</span> <span style="color: #666666;">//index buffer for a mesh</span>
+	std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span><span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> <span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span> _faceIndexes<span style="color: #008080;">;</span> <span style="color: #666666;">//all faces for a mesh.  This is after the offset calculations from meshVerts</span></pre></td></tr></tbody></table></div>
+
+<p>Now that I know the offset into the file, the length of the section, 
+and the data type for each section I can begin copying the data into my 
+storage.  When reading in the section I can determine how many entries 
+it has by dividing the length defined in the lump directory by the 
+sizeof the data type.<br>
+For example, to load the vertices it would look something like this (the
+ buffer variable is where the raw file has been read into memory):</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	<span style="color: #666666;">//Vertices//</span>
+	count <span style="color: #000080;">=</span> _lumpDir<span style="color: #008000;">[</span>Vertices<span style="color: #008000;">]</span>.<span style="color: #007788;">length</span> <span style="color: #000040;">/</span> <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPVertex<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> count<span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		BSPVertex bspv<span style="color: #008080;">;</span>
+		BSPD3DVertex bspd3dv<span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">int</span> curVert <span style="color: #000080;">=</span> i <span style="color: #000040;">*</span> <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPVertex<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span><span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>bspv, buffer <span style="color: #000040;">+</span> _lumpDir<span style="color: #008000;">[</span>Vertices<span style="color: #008000;">]</span>.<span style="color: #007788;">offset</span> <span style="color: #000040;">+</span> curVert, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPVertex<span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		<span style="color: #666666;">//Convert the q3 vertex struct to one the d3d FVF will be happy with.</span>
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vPosition</span>, bspv.<span style="color: #007788;">vPosition</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vPosition</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vNormal</span>, bspv.<span style="color: #007788;">vNormal</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vNormal</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">color</span>, bspv.<span style="color: #007788;">color</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">color</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vTextureCoord</span>, bspv.<span style="color: #007788;">vTextureCoord</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vPosition</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vLightmapCoord</span>, bspv.<span style="color: #007788;">vLightmapCoord</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>bspd3dv.<span style="color: #007788;">vLightmapCoord</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		_vertices.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>bspd3dv<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+	<span style="color: #666666;">//Vertices//</span></pre></td></tr></tbody></table></div>
+
+<p>Here we read each BSPVertex, convert it to a BSPD3DVertex, and add it
+ to a vector.  The vertices had to be converted from the native Quake 3 
+format to something compatible with direct3D’s FVF format.  More on that
+ later.</p>
+<p><strong>Calculating Visible Data</strong></p>
+<p>After all the data has been read into the data structures I can 
+calculate the visible data.  This means finding the camera’s location 
+within the BSP Tree (which leaf it is in), finding leaves visible from 
+this leaf, and gathering all faces from all visible leaves.  At a high 
+level it looks like this.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #666666;">//Build all the visual data from the current camera position</span>
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">BuildVis</span><span style="color: #008000;">(</span>D3DXVECTOR3 cameraPos<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	<span style="color: #0000ff;">int</span> cameraLeaf <span style="color: #000080;">=</span> findLeaf<span style="color: #008000;">(</span>cameraPos<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+	_visibleLeaves.<span style="color: #007788;">clear</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	_visibleFaces.<span style="color: #007788;">clear</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	_alreadyVisibleFaces.<span style="color: #007788;">clear</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	findVisibleLeaves<span style="color: #008000;">(</span>cameraLeaf<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	findVisibleFaces<span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">return</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>The _visibleLeaves, _visibleFaces, and _alreadyVisibleFaces 
+structures hold the currently visible data from our leaf (again camera 
+position determines this leaf).  _alreadyVisibleFaces is used to 
+conveniently track which faces have already been determined to be 
+visible so there aren’t duplicates.</p>
+<p>First find the camera’s leaf.  This is done by traversing the BSP 
+tree nodes until we end in a leaf (references no other nodes).  To 
+traverse the tree start from the first node (root space) and determine 
+if the camera is in front or behind the space’s dividing plane.  Once 
+this is determine traverse to the proper front or back node and repeat 
+the test against the splitting plane.  Continue this until I reach a 
+node whose front or back node references a negative node number (no more
+ children). This means I reached the camera’s leaf.  Here is the code:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #666666;">//Where is the camera in the BSP tree right now</span>
+<span style="color: #0000ff;">int</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">findLeaf</span><span style="color: #008000;">(</span>D3DXVECTOR3 cameraPos<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	<span style="color: #0000ff;">int</span> index <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">while</span><span style="color: #008000;">(</span>index <span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span><span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">const</span> BSPNode <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>node <span style="color: #000080;">=</span> _nodes<span style="color: #008000;">[</span>index<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">const</span> BSPPlane <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>plane <span style="color: #000080;">=</span> _planes<span style="color: #008000;">[</span>node.<span style="color: #007788;">plane</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+		D3DXVECTOR3 planeNormal <span style="color: #000080;">=</span> D3DXVECTOR3<span style="color: #008000;">(</span>plane.<span style="color: #007788;">vNormal</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">float</span> distance <span style="color: #000080;">=</span> D3DXVec3Dot<span style="color: #008000;">(</span><span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>planeNormal, <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>cameraPos<span style="color: #008000;">)</span> <span style="color: #000040;">-</span> plane.<span style="color: #007788;">d</span><span style="color: #008080;">;</span>
+&nbsp;
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span>distance <span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span><span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			index <span style="color: #000080;">=</span> node.<span style="color: #007788;">front</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+		<span style="color: #0000ff;">else</span>
+		<span style="color: #008000;">{</span>
+			index <span style="color: #000080;">=</span> node.<span style="color: #007788;">back</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">return</span> <span style="color: #000040;">-</span>index <span style="color: #000040;">-</span> <span style="color: #0000dd;">1</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>To obtain the proper leaf index you must negate the leaf index and subtract one.  Just the way it was stored.</p>
+<p>Next I need to see which leaves can be seen from the leaf I am 
+currently in.  This is accomplished by comparing the camera leaf’s 
+visible cluster to the other leaves visible clusters.  This takes a bit 
+of explaining because it is fairly abstract.  I will give a quick 
+overview.  For a more in depth explanation check out <a href="http://www.misofruit.co.kr/seojewoo/programming/opengl/Quake3Format.htm">Unofficial Quake 3 BSP Format</a> under the Visibility Data section.</p>
+<p>Visual cluster data is stored in the BSPVisData structure.  It holds 
+the total number of clusters, bytes per cluster, and an array of bytes 
+that holds the bitsets for each visual cluster.  The bitsets for each 
+cluster define the other visible clusters.  For example say the 
+BSPVisData structure looked like this:</p>
+<p>numOfClusters = 3<br>
+bytesPerCluster = 1<br>
+pBitSets = 11000000 11100000 01100000</p>
+<p>There are 3 clusters in our scene.  The clusters require 1 byte of 
+storage a piece (more than necessary, but the smallest addressable 
+size).  pBitsets holds the visibility relationships.<br>
+In this example each byte is one of our clusters.  Call them A, B, and C.</p>
+<p>A<br>
+11000000<br>
+B<br>
+11100000<br>
+C<br>
+01100000</p>
+<p>Each bit in the respective bitsets represents a cluster in the scene.  In this example the last 5 bits are unused.</p>
+<p>ABC<br>
+00000000</p>
+<p>So based on the data above it can be determined that each cluster can see the following.</p>
+<p>A – Sees itself, Cluster B, NOT Cluster C<br>
+B – Cluster A, Sees itself, Cluster C<br>
+C – NOT Cluster A, Cluster B, Sees itself</p>
+<p>Once I determine what clusters the camera cluster can see then I can collect the visible cluster leaves.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #666666;">//What leaves can we see from this leaf</span>
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">findVisibleLeaves</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> cameraLeaf<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	BSPLeaf <span style="color: #000040;">*</span>camLeaf <span style="color: #000080;">=</span> <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>_leaves<span style="color: #008000;">[</span>cameraLeaf<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span><span style="color: #0000ff;">size_t</span> i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _leaves.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span>isClusterVisible<span style="color: #008000;">(</span>camLeaf<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>cluster, _leaves<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">cluster</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			_visibleLeaves.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>i<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+	<span style="color: #008000;">}</span>
+<span style="color: #008000;">}</span>
+&nbsp;
+<span style="color: #666666;">//See what else is visible from where we are</span>
+<span style="color: #0000ff;">bool</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">isClusterVisible</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> currentCluster, <span style="color: #0000ff;">int</span> testCluster<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+    <span style="color: #0000ff;">if</span><span style="color: #008000;">(</span><span style="color: #000040;">!</span>_visData.<span style="color: #007788;">pBitsets</span> <span style="color: #000040;">||</span> currentCluster <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> <span style="color: #0000dd;">0</span><span style="color: #008000;">)</span>
+		<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #008080;">;</span>
+&nbsp;
+    <span style="color: #0000ff;">int</span> i <span style="color: #000080;">=</span> <span style="color: #008000;">(</span>currentCluster <span style="color: #000040;">*</span> _visData.<span style="color: #007788;">bytesPerCluster</span><span style="color: #008000;">)</span> <span style="color: #000040;">+</span> <span style="color: #008000;">(</span>testCluster <span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span> <span style="color: #0000dd;">3</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+    UBYTE visSet <span style="color: #000080;">=</span> _visData.<span style="color: #007788;">pBitsets</span><span style="color: #008000;">[</span>i<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+    <span style="color: #0000ff;">int</span> result <span style="color: #000080;">=</span> visSet <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span> <span style="color: #008000;">(</span><span style="color: #0000dd;">1</span> <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span><span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> <span style="color: #008000;">(</span>testCluster <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span> <span style="color: #0000dd;">7</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+    <span style="color: #0000ff;">return</span> result <span style="color: #000040;">!</span><span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Like I said it is a bit abstract so check out <a href="http://www.misofruit.co.kr/seojewoo/programming/opengl/Quake3Format.htm">Unofficial Quake 3 BSP Format</a> for more info.</p>
+<p>Now that I have all my visible leaves I need to collect all the 
+visible faces from the leaves.  This next section of code cross 
+references a few different data structures to acquire all the face 
+indexes.</p>
+<p>First, I go through all the visible leaves I gathered from the previous step and retrieve the leaf data from the _leaves vector.</p>
+<p>Next, I go through leafFaceCount faces starting at leafFirstFace and retrieve the leafFaceIndexes.</p>
+<p>Then I check to see if this face has already been added via a check 
+of _alreadyVisibleFaces.  This is done because when creating a BSP tree 
+the splitting planes used to divide the space may split meshes in which 
+case the mesh faces may be present in both the front space of the plane 
+and the back space.  In this case I dont want to duplicate faces.  Only 
+render a face once.</p>
+<p>Finally, I add the leafFaceIndex to the vector of _visibleFaces</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #666666;">//Out of all our visible leaves what faces do they contain</span>
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">findVisibleFaces</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _visibleLeaves.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		BSPLeaf bspl <span style="color: #000080;">=</span> _leaves<span style="color: #008000;">[</span>_visibleLeaves<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> f <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> f <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> bspl.<span style="color: #007788;">leafFaceCount</span><span style="color: #008080;">;</span> f<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000ff;">int</span> faceIndex <span style="color: #000080;">=</span> bspl.<span style="color: #007788;">leafFirstFace</span> <span style="color: #000040;">+</span> f<span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">int</span> leafFaceIndex <span style="color: #000080;">=</span> pLeafFaces<span style="color: #008000;">[</span>faceIndex<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span> _alreadyVisibleFaces.<span style="color: #007788;">find</span><span style="color: #008000;">(</span>leafFaceIndex<span style="color: #008000;">)</span> <span style="color: #000080;">==</span> _alreadyVisibleFaces.<span style="color: #007788;">end</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span> <span style="color: #008000;">)</span>
+			<span style="color: #008000;">{</span>
+				_visibleFaces.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>leafFaceIndex<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+				_alreadyVisibleFaces.<span style="color: #007788;">insert</span><span style="color: #008000;">(</span>leafFaceIndex<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #008000;">}</span>
+		<span style="color: #008000;">}</span>
+	<span style="color: #008000;">}</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>This is the basic process for determining all the visible faces from 
+the current camera position in the BSP tree.  Now I am ready to render 
+the faces.</p>
+<p><strong>Rendering The Scene Data</strong></p>
+<p>Before rendering there is some conversions and definitions that need to made.  Lets start with coordinate space conversions.</p>
+<p>The Quake 3 coordinate system has the x-axis pointing East, the 
+y-axis pointing South, and the z-axis pointing down.  This needs to be 
+converted to the D3D left hand coordinate space.  This requires the 
+following data to be swizzled.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">swizzle</span><span style="color: #008000;">(</span><span style="color: #0000ff;">float</span> <span style="color: #000040;">*</span>v<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+    <span style="color: #0000ff;">float</span> temp <span style="color: #000080;">=</span> v<span style="color: #008000;">[</span><span style="color: #0000dd;">1</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+    v<span style="color: #008000;">[</span><span style="color: #0000dd;">1</span><span style="color: #008000;">]</span> <span style="color: #000080;">=</span> v<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+    v<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span> <span style="color: #000080;">=</span> <span style="color: #000040;">-</span>temp<span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">swizzle</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> <span style="color: #000040;">*</span>v<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+    <span style="color: #0000ff;">int</span> temp <span style="color: #000080;">=</span> v<span style="color: #008000;">[</span><span style="color: #0000dd;">1</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+    v<span style="color: #008000;">[</span><span style="color: #0000dd;">1</span><span style="color: #008000;">]</span> <span style="color: #000080;">=</span> v<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+    v<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span> <span style="color: #000080;">=</span> <span style="color: #000040;">-</span>temp<span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">convertCoordForD3D</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _vertices.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_vertices<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vPosition</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		swizzle<span style="color: #008000;">(</span>_vertices<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vNormal</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _planes.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_planes<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vNormal</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _faces.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vNormal</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _nodes.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_nodes<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">mins</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		swizzle<span style="color: #008000;">(</span>_nodes<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">maxs</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _leaves.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_leaves<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">mins</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		swizzle<span style="color: #008000;">(</span>_leaves<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">maxs</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _models.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		swizzle<span style="color: #008000;">(</span>_models<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">min</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		swizzle<span style="color: #008000;">(</span>_models<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">max</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>I do this after all data has been read into memory.  Once everything is converted it is time to define some vertex formats.</p>
+<p>I need to let directx know what kind of data to expect for my 
+vertices.  This is done using a Flexible Vertex Format (FVF).  Here is 
+my definition.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #339900;">#define D3D_Q3_VERT_FVF (D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE| D3DFVF_TEX2)</span></pre></td></tr></tbody></table></div>
+
+<p>This definition matches the structure of my BSPD3DVertex structure.</p>
+<p>!!! NOTE: The order of the definition above doesn’t matter.  They are
+ just flags.  I had to discover the proper structure layout on <a href="http://msdn.microsoft.com/en-us/library/bb172559%28v=vs.85%29.aspx">MSDN</a>.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	<span style="color: #0000ff;">struct</span> BSPD3DVertex
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">float</span> vPosition<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>      <span style="color: #666666;">// (x, y, z) position.</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>        <span style="color: #666666;">// (x, y, z) normal vector</span>
+		UBYTE color<span style="color: #008000;">[</span><span style="color: #0000dd;">4</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>           <span style="color: #666666;">// RGBA color for the vertex</span>
+		<span style="color: #0000ff;">float</span> vTextureCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>  <span style="color: #666666;">// (u, v) texture coordinate</span>
+		<span style="color: #0000ff;">float</span> vLightmapCoord<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// (u, v) lightmap coordinate</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span></pre></td></tr></tbody></table></div>
+
+<p>Without the proper stucture layout you can get odd renders such as this one with color data out of place:</p>
+<p><a href="http://dialogtree.com/wp-content/uploads/2011/05/q3dm1fill.jpg"><img class="aligncenter size-medium wp-image-712" title="q3dm1fill" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/q3dm1fill-300x226.jpg" alt="" width="300" height="226"></a></p>
+<p>Now that I have defined my vertex format, the vertex data is read in,
+ and I know how many vertices I’m dealing with.  This allows me to 
+create a vertex buffer of the appropriate size.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">		UINT buffer_size <span style="color: #000080;">=</span> _vertices.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span> <span style="color: #000040;">*</span> <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPD3DVertex<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		HRESULT res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>CreateVertexBuffer<span style="color: #008000;">(</span> buffer_size, D3DUSAGE_DYNAMIC <span style="color: #000040;">|</span> D3DUSAGE_WRITEONLY, D3D_Q3_VERT_FVF, D3DPOOL_DEFAULT, <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>vertBuffer, <span style="color: #0000ff;">NULL</span> <span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">if</span> <span style="color: #008000;">(</span>res <span style="color: #000040;">!</span><span style="color: #000080;">=</span> D3D_OK<span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000dd;">assert</span><span style="color: #008000;">(</span><span style="color: #0000dd;">0</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		<span style="color: #666666;">//Fill vertex buffer</span>
+		BSPD3DVertex<span style="color: #000040;">*</span> pVMem<span style="color: #008080;">;</span>
+&nbsp;
+		res <span style="color: #000080;">=</span> vertBuffer<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>Lock<span style="color: #008000;">(</span> <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">0</span>, <span style="color: #008000;">(</span><span style="color: #0000ff;">void</span><span style="color: #000040;">**</span><span style="color: #008000;">)</span><span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>pVMem, <span style="color: #0000dd;">0</span> <span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span> res <span style="color: #000040;">!</span><span style="color: #000080;">=</span> D3D_OK <span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000dd;">assert</span><span style="color: #008000;">(</span><span style="color: #0000dd;">0</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>pVMem, _vertices.<span style="color: #007788;">data</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPD3DVertex<span style="color: #008000;">)</span> <span style="color: #000040;">*</span> _vertices.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		vertBuffer<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>Unlock<span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span></pre></td></tr></tbody></table></div>
+
+<p>Now the vertex buffer is ready to go.  Pretty easy actually.  On to the index buffers.</p>
+<p>The index buffers were a little trickier.  The face structure holds the following data:</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">	<span style="color: #0000ff;">struct</span> BSPFace
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">int</span> textureID<span style="color: #008080;">;</span>        <span style="color: #666666;">// The index into the texture array</span>
+		<span style="color: #0000ff;">int</span> effect<span style="color: #008080;">;</span>           <span style="color: #666666;">// The index for the effects (or -1 = n/a)</span>
+		<span style="color: #0000ff;">int</span> type<span style="color: #008080;">;</span>             <span style="color: #666666;">// 1=polygon, 2=patch, 3=mesh, 4=billboard</span>
+		<span style="color: #0000ff;">int</span> vertexIndex<span style="color: #008080;">;</span>      <span style="color: #666666;">// The index into this face's first vertex</span>
+		<span style="color: #0000ff;">int</span> numOfVerts<span style="color: #008080;">;</span>       <span style="color: #666666;">// The number of vertices for this face</span>
+		<span style="color: #0000ff;">int</span> meshVertIndex<span style="color: #008080;">;</span>    <span style="color: #666666;">// The index into the first meshvertex</span>
+		<span style="color: #0000ff;">int</span> numMeshVerts<span style="color: #008080;">;</span>     <span style="color: #666666;">// The number of mesh vertices</span>
+		<span style="color: #0000ff;">int</span> lightmapID<span style="color: #008080;">;</span>       <span style="color: #666666;">// The texture index for the lightmap</span>
+		<span style="color: #0000ff;">int</span> lMapCorner<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>    <span style="color: #666666;">// The face's lightmap corner in the image</span>
+		<span style="color: #0000ff;">int</span> lMapSize<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>      <span style="color: #666666;">// The size of the lightmap section</span>
+		<span style="color: #0000ff;">float</span> lMapPos<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// The 3D origin of lightmap.</span>
+		<span style="color: #0000ff;">float</span> lMapBitsets<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span> <span style="color: #666666;">// The 3D space for s and t unit vectors.</span>
+		<span style="color: #0000ff;">float</span> vNormal<span style="color: #008000;">[</span><span style="color: #0000dd;">3</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>     <span style="color: #666666;">// The face normal.</span>
+		<span style="color: #0000ff;">int</span> size<span style="color: #008000;">[</span><span style="color: #0000dd;">2</span><span style="color: #008000;">]</span><span style="color: #008080;">;</span>          <span style="color: #666666;">// The bezier patch dimensions.</span>
+	<span style="color: #008000;">}</span><span style="color: #008080;">;</span></pre></td></tr></tbody></table></div>
+
+<p>As you can see each face has one of four types.  For this pass I am 
+only concerned about polygonal types.  This means I need to look at the 
+followind data.</p>
+<p>vertexIndex<br>
+meshVertIndex<br>
+numMeshVerts</p>
+<p>These three pieces of data define the mesh (BSPFace may have been a 
+poor name as it seems to define a surface).  To get the proper indexes 
+into the vertex buffer for the mesh I do the following.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;">		<span style="color: #666666;">//all proper vertex indices for mesh after offest calc</span>
+		<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> j <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> j <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">numMeshVerts</span><span style="color: #008080;">;</span> j<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000ff;">int</span> index <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">meshVertIndex</span> <span style="color: #000040;">+</span> j<span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">int</span> offset <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vertexIndex</span> <span style="color: #000040;">+</span> pMeshVerts<span style="color: #008000;">[</span>index<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+			new_ibuf.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>offset<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			faceIndexes.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>offset<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>For the number of mesh vertexes per face, find the index into 
+pMeshVerts which contains an offset from the first vertexIndex for the 
+face.  Make sense?  Basically I know how many vertexes I will have for 
+this face (numMeshVerts).  Starting from the first meshVertIndex I will 
+have I will have numMeshVert indexes into pMeshVerts which will yield 
+numMeshVert offsets from vertexIndex (first index for this mesh in the 
+vertex array).  When you add the offset to vertexIndex you get the 
+appropriate index in to the vertex array for that vertex.</p>
+<p>_face.numMeshVerts == 6<br>
+_face.meshVertIndex == 52<br>
+_face.vertexIndex == 75</p>
+<p>index…………..52………………….58<br>
+*pMeshVerts …[0][1][2][0][3][4]…</p>
+<p>_vertices …[75][76][77][78][79]…</p>
+<p>So the vertex indexes for this face would be, 75, 76, 77, 75, 78, 79.
+  These indexes hold the actual vertex data in _vertices.  Hopefully 
+this makes sense.  Threw me for a loop initially.  As illustrated by 
+this mangled mesh and refernce teapot.</p>
+<p><a href="http://dialogtree.com/wp-content/uploads/2011/05/vertex_garbage.jpg"><img class="aligncenter size-medium wp-image-713" title="vertex_garbage" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/vertex_garbage-300x224.jpg" alt="" width="300" height="224"></a></p>
+<p>Here is the full function for creating the index buffers per face (mesh).</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #0000ff;">bool</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">createIndexBuffers</span><span style="color: #008000;">(</span>LPDIRECT3DDEVICE9 device<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	HRESULT result<span style="color: #008080;">;</span>
+	<span style="color: #0000ff;">int</span> <span style="color: #000040;">*</span>pIndices<span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #666666;">//Create index buffers for faces (surfaces)</span>
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>UINT i <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> i <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _faces.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		LPDIRECT3DINDEXBUFFER9 ibuf<span style="color: #008080;">;</span>
+		std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> faceIndexes<span style="color: #008080;">;</span>
+&nbsp;
+		std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span> new_ibuf<span style="color: #008080;">;</span> <span style="color: #666666;">//index buffer with calculated meshVert offets</span>
+&nbsp;
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span>_faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">numMeshVerts</span> <span style="color: #000080;">==</span> <span style="color: #0000dd;">0</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			ibuf <span style="color: #000080;">=</span> <span style="color: #0000ff;">NULL</span><span style="color: #008080;">;</span>
+			_faceIndexBuffers.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>ibuf<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			_faceIndexes.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>faceIndexes<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">continue</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		<span style="color: #666666;">//all proper vertex indices for mesh after offest calc</span>
+		<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> j <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> j <span style="color: #000040;">&amp;</span>lt<span style="color: #008080;">;</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">numMeshVerts</span><span style="color: #008080;">;</span> j<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000ff;">int</span> index <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">meshVertIndex</span> <span style="color: #000040;">+</span> j<span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">int</span> offset <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">vertexIndex</span> <span style="color: #000040;">+</span> pMeshVerts<span style="color: #008000;">[</span>index<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+			new_ibuf.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>offset<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			faceIndexes.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>offset<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		UINT buffer_size <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span>i<span style="color: #008000;">]</span>.<span style="color: #007788;">numMeshVerts</span> <span style="color: #000040;">*</span> <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		result <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>CreateIndexBuffer<span style="color: #008000;">(</span> buffer_size, D3DUSAGE_WRITEONLY, D3DFMT_INDEX32, D3DPOOL_DEFAULT, <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>ibuf, <span style="color: #0000ff;">NULL</span> <span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">if</span> <span style="color: #008000;">(</span>result <span style="color: #000040;">!</span><span style="color: #000080;">=</span> D3D_OK<span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000dd;">assert</span><span style="color: #008000;">(</span><span style="color: #0000dd;">0</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		result <span style="color: #000080;">=</span> ibuf<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>Lock<span style="color: #008000;">(</span> <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">0</span>, <span style="color: #008000;">(</span><span style="color: #0000ff;">void</span><span style="color: #000040;">**</span><span style="color: #008000;">)</span><span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>pIndices, <span style="color: #0000dd;">0</span> <span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span>result <span style="color: #000040;">!</span><span style="color: #000080;">=</span> D3D_OK<span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000dd;">assert</span><span style="color: #008000;">(</span><span style="color: #0000dd;">0</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+			<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+&nbsp;
+		<span style="color: #0000dd;">memcpy</span><span style="color: #008000;">(</span>pIndices, new_ibuf.<span style="color: #007788;">data</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span><span style="color: #0000ff;">int</span><span style="color: #008000;">)</span> <span style="color: #000040;">*</span> new_ibuf.<span style="color: #007788;">size</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		ibuf<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>Unlock<span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		_faceIndexBuffers.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>ibuf<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		_faceIndexes.<span style="color: #007788;">push_back</span><span style="color: #008000;">(</span>faceIndexes<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	<span style="color: #008000;">}</span>
+&nbsp;
+	<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Now all that is left is the rendering calls, which is pretty damn simple compared to the rest of this.</p>
+
+<div class="wp_syntax"><table><tbody><tr><td class="code"><pre class="cpp" style="font-family:monospace;"><span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">DrawMap</span><span style="color: #008000;">(</span>LPDIRECT3DDEVICE9 device, LPDIRECT3DVERTEXBUFFER9 vertBuffer, D3DXVECTOR3 cameraPos<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	HRESULT res<span style="color: #008080;">;</span>
+	res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>SetTexture<span style="color: #008000;">(</span><span style="color: #0000dd;">0</span>,<span style="color: #0000ff;">NULL</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>SetStreamSource<span style="color: #008000;">(</span><span style="color: #0000dd;">0</span>, vertBuffer, <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">sizeof</span><span style="color: #008000;">(</span>BSPD3DVertex<span style="color: #008000;">)</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+	res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>SetFVF<span style="color: #008000;">(</span>D3D_Q3_VERT_FVF<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+	drawMapIP<span style="color: #008000;">(</span>device<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span>
+&nbsp;
+<span style="color: #0000ff;">void</span> q3map<span style="color: #008080;">::</span><span style="color: #007788;">drawMapIP</span><span style="color: #008000;">(</span>LPDIRECT3DDEVICE9 device<span style="color: #008000;">)</span>
+<span style="color: #008000;">{</span>
+	HRESULT res<span style="color: #008080;">;</span>
+&nbsp;
+	<span style="color: #0000ff;">for</span><span style="color: #008000;">(</span>std<span style="color: #008080;">::</span><span style="color: #007788;">vector</span><span style="color: #008080;">::</span><span style="color: #007788;">iterator</span> i <span style="color: #000080;">=</span> _visibleFaces.<span style="color: #007788;">begin</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i <span style="color: #000040;">!</span><span style="color: #000080;">=</span> _visibleFaces.<span style="color: #007788;">end</span><span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span> i<span style="color: #000040;">++</span><span style="color: #008000;">)</span>
+	<span style="color: #008000;">{</span>
+		<span style="color: #0000ff;">const</span> BSPFace <span style="color: #000040;">&amp;</span>amp<span style="color: #008080;">;</span>curFace <span style="color: #000080;">=</span> _faces<span style="color: #008000;">[</span><span style="color: #000040;">*</span>i<span style="color: #008000;">]</span><span style="color: #008080;">;</span>
+&nbsp;
+		res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>SetIndices<span style="color: #008000;">(</span>_faceIndexBuffers<span style="color: #008000;">[</span><span style="color: #000040;">*</span>i<span style="color: #008000;">]</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		res <span style="color: #000080;">=</span> device<span style="color: #000040;">-</span><span style="color: #000040;">&amp;</span>gt<span style="color: #008080;">;</span>DrawIndexedPrimitive<span style="color: #008000;">(</span>D3DPT_TRIANGLELIST, <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">0</span>, curFace.<span style="color: #007788;">numMeshVerts</span>, <span style="color: #0000dd;">0</span>, curFace.<span style="color: #007788;">numMeshVerts</span> <span style="color: #000040;">/</span> <span style="color: #0000dd;">3</span> <span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+&nbsp;
+		<span style="color: #0000ff;">if</span><span style="color: #008000;">(</span> res <span style="color: #000040;">!</span><span style="color: #000080;">=</span> D3D_OK <span style="color: #008000;">)</span>
+		<span style="color: #008000;">{</span>
+			<span style="color: #0000dd;">assert</span><span style="color: #008000;">(</span><span style="color: #0000dd;">0</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+		<span style="color: #008000;">}</span>
+	<span style="color: #008000;">}</span>
+<span style="color: #008000;">}</span></pre></td></tr></tbody></table></div>
+
+<p>As a final rendering note, look through the entities string to find 
+some spawn points so you can get the camera in a reasonable location to 
+see geometry.  Also, this will help to put lights in the scene, which as
+ you may guess makes it easier to see.</p>
+<p><strong>Wrap Up (Finally)</strong></p>
+<p>So that is how I spent my past two weeks!  It was a lot of fun doing 
+something I have always wanted to try.  There were a few tribulations, 
+but the end result was well worth it.  This is the first information I 
+have seen about doing this in direct3D so hopefully it can help someone 
+in the future.  I must say I found the site at the beginning of the 
+article a big help.  Kudos to those guys.  Was quicker than going 
+through the Quake 3 source (which was referenced once or twice).  Anyway
+ enjoy!</p>
+<p><a href="http://dialogtree.com/wp-content/uploads/2011/05/q3bspFinal.jpg"><img class="aligncenter size-medium wp-image-711" title="q3bspFinal" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/q3bspFinal-300x225.jpg" alt="" width="300" height="225"></a></p>
+<div style="float: right; margin-left: 10px;"><iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/tweet_button.html" data-url="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/" frameborder="0"></iframe><script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/widgets.js"></script></div>
+												
+					</div><!-- .entry-content -->
+					
+					<div class="entry-utility">
+
+						<span class="cat-links">This entry was posted in <a href="http://dialogtree.com/category/c/" title="View all posts in C++" rel="category tag">C++</a>, <a href="http://dialogtree.com/category/direct3d/" title="View all posts in Direct3D" rel="category tag">Direct3D</a>, <a href="http://dialogtree.com/category/resource/" title="View all posts in Resource" rel="category tag">Resource</a></span><span class="tag-links"> and tagged  <a href="http://dialogtree.com/tag/axon/" rel="tag">axon</a>, <a href="http://dialogtree.com/tag/bsp-tree/" rel="tag">BSP Tree</a>, <a href="http://dialogtree.com/tag/quake-3/" rel="tag">Quake 3</a>, <a href="http://dialogtree.com/tag/tutorial/" rel="tag">Tutorial</a></span>. Bookmark the <a title="Permalink to Quake 3 BSP Map Viewer In Direct3D" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/">permalink</a>. Trackbacks are closed, but you can <a class="comment-link" title="Post a comment" href="#respond">post a comment</a>.
+
+					</div><!-- .entry-utility -->
+					
+				</div><!-- #post -->
+		
+			<div id="nav-below" class="navigation">
+				<div class="nav-previous"><a href="http://dialogtree.com/2011/05/adding-a-uinavigationcontroller-programmatically-within-xcode-4/" rel="prev"><span class="meta-nav">«</span> Adding a UINavigationController Programmatically within XCode 4</a></div>
+				<div class="nav-next"><a href="http://dialogtree.com/2011/05/creating-a-custom-uitableview-in-your-ios-app/" rel="next">Creating a Custom UITableView in Your iOS App <span class="meta-nav">»</span></a></div>
+			</div>
+
+								
+				<div id="comments">
+	
+					
+					
+										
+												
+					
+											
+					<div id="comments-list-wrapper" class="comments">
+
+						<h3><span>16</span> Comments</h3>
+	
+						<ol id="comments-list">
+							    
+       	<li id="comment-28003" class="comment even thread-even depth-1 thm-c-y2014 thm-c-m09 thm-c-d26 thm-c-h04">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/f9d2ba6d64fa0eb6e021c11a3cec0bae.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://boombeachhackcheatss.wordpress.com/" rel="external nofollow" class="url url">boom beach hack</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2014/09/26 at 8:11 am <span class="meta-sep">|</span> <a href="#comment-28003" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>I’m pretty pleased to uncover this website. I want to to thank you for ones time for this<br>
+particularly fantastic read!! I definitely savored every little bit of it and I have<br>
+you book-marked to see new stuff in your site.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=28003#respond" onclick='return addComment.moveForm("comment-28003", "28003", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40588" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m04 thm-c-d14 thm-c-h17">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/a318b88c7f9c2963798c3e5ffb18ab5f.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://googlenoserve21.com/" rel="external nofollow" class="url url">Mercedes</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/04/14 at 9:10 pm <span class="meta-sep">|</span> <a href="#comment-40588" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>I was curious if you ever thought of changing the structure of your<br>
+site? Its very well written; I love what youve got to say.<br>
+But maybe you could a little more in the way of content so people<br>
+could connect with it better. Youve got an awful lot of text for<br>
+only having 1 or two pictures. Maybe you could space it out better?</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40588#respond" onclick='return addComment.moveForm("comment-40588", "40588", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40591" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m04 thm-c-d15 thm-c-h04">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/255476c58a7e672044eba23d4361e1c9.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="https://cocoappli.com/vtc-martinique/" rel="external nofollow" class="url url">Coco</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/04/15 at 8:14 am <span class="meta-sep">|</span> <a href="#comment-40591" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>This post is genuinely a good one it helps new the web people,<br>
+who are wishing in favor of blogging.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40591#respond" onclick='return addComment.moveForm("comment-40591", "40591", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40619" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m04 thm-c-d17 thm-c-h20">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/9798409448375b93366ee7786d2aba2c.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://zeytinyagimakineleri.com/user/profile/1176" rel="external nofollow" class="url url">thecatsfriend.com</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/04/18 at 12:05 am <span class="meta-sep">|</span> <a href="#comment-40619" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>It’s a good idea after cleanings to test your litterbox for scratched or abraded plastic.<br>
+Budgeting for a brand new bbox annually is a good idea.<br>
+As I discussed earlier, plastic litterboxes should bee replaced every year or two.</p>
+<p>Also, since almost all bins are plastic, it’s best to plan to exchange your litterbox<br>
+at common intervals, as a result of whereas plastyic packing containers are inexpensive,lightweight<br>
+and straightforward to wash, there are downsides, together with the fact that they get scratched up.</p>
+<p>You can uncover your kitty’s litter desire by shopping<br>
+for the smallest quantity out thete off a number of kinds of litter, and a number of<br>
+other cheap plastic litter pans. For standard (non-clumping) litter, this must be performed no less than as soon aas per week.<br>
+Especiallly if you usee unscented litter, you must be diaciplined about scooping<br>
+the field. Dry the realm totally with another paper owel before scooping<br>
+dry litter back over it. After scooping, I additionally recommend removing any litter stuck to the siides oor bottom of<br>
+the box with a damp paper towel. And make sure<br>
+the field is not too close tto kitty’s meals or waater bowls.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40619#respond" onclick='return addComment.moveForm("comment-40619", "40619", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40633" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m04 thm-c-d19 thm-c-h05">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/b94247985086381de8a3cefd056700b3.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://i1122.com/comment/html/?541.html" rel="external nofollow" class="url url">cat litter for</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/04/19 at 9:59 am <span class="meta-sep">|</span> <a href="#comment-40633" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>Its time to spring into a giveaway Worlds Best Catt Litter is giving<br>
+away a free 3-month supply of their awesome litter! .<br>
+Use the link in our description to win!! Giveaway ends Aprril 26th,2019!</p>
+<p>.</p>
+<p>worldsbestcatcafe worldsbestcatlitter giveaway catcafe catlitter</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40633#respond" onclick='return addComment.moveForm("comment-40633", "40633", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40634" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m04 thm-c-d19 thm-c-h07">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/28317826aede12e719b0960f76f8dfe9.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://www.dr-bill.com/comment/html/?591.html" rel="external nofollow" class="url url">kitten litter for</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/04/19 at 11:16 am <span class="meta-sep">|</span> <a href="#comment-40634" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>Youu might be, in spite of everything, the person who will be cleansing<br>
+and sustaining it. Youu might imagine itt is just too giant, but<br>
+the enough house will provode a cushty surroundings in your cat.<br>
+Some rabbits who are excellent with their litterbox will begin leaving<br>
+droppings when their environment adjustments or they’re<br>
+careworn — did you progress the furniture? Choose a crate with<br>
+internal dimensions which might be as large because the<br>
+size of our pet. It reaoly is important that shuould you have got a ppet that every<br>
+single time you come intoo contact with with them you wassh your palms completely<br>
+afterwards.Pets can go on harmful bacterias that<br>
+wilol maye be present in their faeces. Thhe hood is<br>
+simple to placed on and remove thanks to the snmap latches,<br>
+and when it comes time to wash the litter, the flip prime makes it easy.<br>
+The retraining ccourse off to make sure youyr catt defecates within the litter field every time.<br>
+It’s with this in thoughts that cat lovers thought it wise<br>
+to construct litter containers in your cats.<br>
+In terms of ease of use and comfort, automatic litter boxes<br>
+are certainly peerless. Self-cleansing litter bins can mechanically<br>
+take away the clumped wastes, but they cannot clear and maintain themselves.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40634#respond" onclick='return addComment.moveForm("comment-40634", "40634", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-40968" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m05 thm-c-d06 thm-c-h19">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/c58815087187aec31caba69cda37747a.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="https://skinphoriaspa.com/" rel="external nofollow" class="url url">head massage</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/05/06 at 11:19 pm <span class="meta-sep">|</span> <a href="#comment-40968" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>Undeniably imagine that that you said. Your favorite reason seemed to be on the web the easiest factor to take<br>
+into accout of. I say to you, I certainly get annoyed<br>
+at the same time as people think about concerns that they just do not<br>
+know about. You managed to hit the nail upon the highest and also outlined<br>
+out the entire thing with no need side effect , folks can take a signal.<br>
+Will likely be again to get more. Thank you!</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=40968#respond" onclick='return addComment.moveForm("comment-40968", "40968", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-41203" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m07 thm-c-d14 thm-c-h19">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/3c879353aa9cffd7010198a6f53f520b.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://googleownsdit.com/" rel="external nofollow" class="url url">Janet</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/07/14 at 11:06 pm <span class="meta-sep">|</span> <a href="#comment-41203" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>What’s up to every body, it’s my first pay a visit of this webpage; this webpage includes amazing<br>
+and really fine data in favor of visitors.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=41203#respond" onclick='return addComment.moveForm("comment-41203", "41203", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-41206" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m07 thm-c-d14 thm-c-h19">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/3c10c443c4d6927760303ab8363299e6.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://pchome/?????" rel="external nofollow" class="url url">health organizations</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/07/14 at 11:23 pm <span class="meta-sep">|</span> <a href="#comment-41206" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>I feel this is among the such a lot important info for me.<br>
+And i am glad reading your article. But wanna remark on few general 
+things, The site taste is wonderful, the articles is really great :<br>
+D. Just right activity, cheers</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=41206#respond" onclick='return addComment.moveForm("comment-41206", "41206", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-41365" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m08 thm-c-d09 thm-c-h18">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/cbd22fba85756d60a55162783287fe7c.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://googlenowrseed.com/" rel="external nofollow" class="url url">Tina</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/09 at 10:22 pm <span class="meta-sep">|</span> <a href="#comment-41365" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>What’s Going down i am new to this, I stumbled upon this I have discovered It<br>
+absolutely useful and it has aided me out loads. I am hoping<br>
+to give a contribution &amp; help different customers like its aided me.<br>
+Good job.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=41365#respond" onclick='return addComment.moveForm("comment-41365", "41365", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-41392" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m08 thm-c-d11 thm-c-h09">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/e88fa5773c47e40cf2e2657a80282632.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://florina.bg/bg/content/ideal-skaggprodukter-your-facial-beard-and-skin" rel="external nofollow" class="url url">Sabina</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/11 at 1:58 pm <span class="meta-sep">|</span> <a href="#comment-41392" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>I really liked this post i actually rea your blog pretty often, and you’re consistently coming out with sme great stuff.</p>
+<p>I embedded this on my facebook, and my followers adored it.<br>
+Keep up the great work :)</p>
+<p>Also visit mmy website … skäggolja (<a href="http://florina.bg/bg/content/ideal-skaggprodukter-your-facial-beard-and-skin" rel="nofollow">Sabina</a>)</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=41392#respond" onclick='return addComment.moveForm("comment-41392", "41392", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-41502" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m08 thm-c-d18 thm-c-h06">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/0901ad494db7593c9a8c4ce433a2ad4b.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://brudgang.com/Smell_Good_High_Quality_Natural_Conditioning_Beard_For_A_Healthier_Softer_Great_Smelling_Beard" rel="external nofollow" class="url url">billigt skäggolja</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/18 at 10:10 am <span class="meta-sep">|</span> <a href="#comment-41502" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>This post was amazing i actually read your blog very often, and you’re constantly coming<br>
+out with some great stuff. I contributed this on my blog, and my followers really liked it.</p>
+<p>Continue the very good work :)</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=41502#respond" onclick='return addComment.moveForm("comment-41502", "41502", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-42087" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m08 thm-c-d24 thm-c-h06">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/980e658f80181a71bca1eab0a636f7e1.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://careertechumxz.basinperlite.com/a-reprise-about-compliance-audits" rel="external nofollow" class="url url">audit software</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/24 at 10:12 am <span class="meta-sep">|</span> <a href="#comment-42087" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>Hi I am so thrilled I found your site, I really found you by error, while<br>
+I was browsing on Digg for something else, Anyways I am here now and would<br>
+just like to say many thanks for a fantastic post and a all round thrilling<br>
+blog (I also love the theme/design), I don’t have time to read through it all at the moment but I have<br>
+bookmarked it and also added your RSS feeds, so when I have time I will be back<br>
+to read much more, Please do keep up the great job.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=42087#respond" onclick='return addComment.moveForm("comment-42087", "42087", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-42166" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m08 thm-c-d27 thm-c-h11">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/29ff080d0df121589d3843165909b903.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="https://rhymesinenglish.com/rhymes/solomon-grundy/" rel="external nofollow" class="url url">solomon grundy rhyme</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/27 at 3:07 pm <span class="meta-sep">|</span> <a href="#comment-42166" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>How is this for kids!?</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=42166#respond" onclick='return addComment.moveForm("comment-42166", "42166", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-42271" class="comment even thread-even depth-1 thm-c-y2019 thm-c-m08 thm-c-d31 thm-c-h18">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/6a1e844f60c43f1332f4cff1c0fad0f4.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://eatingdisordertherrgr.crimetalk.net/without-h2o-we-would-certainly-not-stay-alive" rel="external nofollow" class="url url">Cali</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/08/31 at 10:04 pm <span class="meta-sep">|</span> <a href="#comment-42271" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>I am in fact grateful to the owner of this website who<br>
+has shared this great piece of writing at<br>
+at this time.</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=42271#respond" onclick='return addComment.moveForm("comment-42271", "42271", "respond", "709")'>Reply</a></div>			
+			
+</li>
+    
+       	<li id="comment-42342" class="comment odd alt thread-odd thread-alt depth-1 thm-c-y2019 thm-c-m09 thm-c-d03 thm-c-h18">
+    	
+    		    		
+    		<div class="comment-author vcard"><img alt="" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/3a3e8f338277deabe2536d202b0a0848.png" class="photo avatar avatar-80 photo" width="80" height="80"> <span class="fn n"><a href="http://d.95943.vip/comment/html/?12834.html" rel="external nofollow" class="url url">d.95943.vip</a></span></div>
+    		
+    			<div class="comment-meta">Posted 2019/09/03 at 10:21 pm <span class="meta-sep">|</span> <a href="#comment-42342" title="Permalink to this comment">Permalink</a></div>
+    		
+    			    			
+            <div class="comment-content">
+            
+        		<p>Excellent website you have here but I was curious about<br>
+if you knew of any message boards that cover the same topics talked about here?</p>
+<p>I’d really love to be a part of group where I can get advice from other knowledgeable people that share the same interest.<br>
+If you have any suggestions, please let me know. Thanks a lot!</p>
+        		
+    		</div>
+    		
+			<div class="comment-reply-link"><a class="comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/?replytocom=42342#respond" onclick='return addComment.moveForm("comment-42342", "42342", "respond", "709")'>Reply</a></div>			
+			
+</li>
+						</ol>
+										
+					</div><!-- #comments-list-wrapper .comments -->
+					
+												
+										
+										
+					<div id="comments-nav-below" class="comment-navigation">
+	        		
+	        			<div class="paginated-comments-links"></div>
+	                
+	                </div>	
+	                	                  
+					
+											
+											<div id="respond">
+				<h3 id="reply-title">Post a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://dialogtree.com/2011/05/quake-3-bsp-map-viewer-in-direct3d/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://dialogtree.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email is <em>never</em> published nor shared. Required fields are marked <span class="required">*</span></p>							<div id="form-section-author" class="form-section"><div class="form-label"><label for="author">Name</label> <span class="required">*</span></div><div class="form-input"><input id="author" name="author" type="text" size="30" maxlength="20" tabindex="3" aria-required="true"></div></div><!-- #form-section-author .form-section -->
+<div id="form-section-email" class="form-section"><div class="form-label"><label for="email">Email</label> <span class="required">*</span></div><div class="form-input"><input id="email" name="email" type="email" size="30" maxlength="50" tabindex="4" aria-required="true"></div></div><!-- #form-section-email .form-section -->
+<div id="form-section-url" class="form-section"><div class="form-label"><label for="url">Website</label></div><div class="form-input"><input id="url" name="url" type="url" size="30" maxlength="50" tabindex="5"></div></div><!-- #form-section-url .form-section -->
+												<div id="form-section-comment" class="form-section"><div class="form-label"><label for="comment">Comment</label></div><div class="form-textarea"><textarea id="comment" name="comment" cols="45" rows="8" tabindex="6" aria-required="true"></textarea></div></div><!-- #form-section-comment .form-section -->						<div id="form-allowed-tags" class="form-section"><p><span>You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes</span> <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></p></div>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="709" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="e3da4ff031"></p>					</form>
+							</div><!-- #respond -->
+							
+				</div><!-- #comments -->
+				
+						
+			</div><!-- #content -->
+			
+			 
+		</div><!-- #container -->
+		
+				
+		</div><!-- #main -->
+    	
+    	<div id="footer">	
+        	
+        	    
+	<div id="siteinfo">        
+
+   			Powered by <a class="wp-link" href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a>. Built on the <a class="theme-link" href="http://thematictheme.com/" title="Thematic Theme Framework" rel="home">Thematic Theme Framework</a>.
+
+	</div><!-- #siteinfo -->
+	
+   	        	
+		</div><!-- #footer -->
+    	
+	</div><!-- #wrapper .hfeed -->
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/hoverIntent.js"></script>
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/superfish.js"></script>
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/supersubs.js"></script>
+<script type="text/javascript" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/thematic-dropdowns.js"></script>
+
+
+<iframe scrolling="no" allowtransparency="true" src="Quake%203%20BSP%20Map%20Viewer%20In%20Direct3D_files/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe></body></html>
